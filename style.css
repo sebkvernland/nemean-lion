@@ -1,0 +1,500 @@
+/*-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+ * Project. :	Nemean
+ * Version. :	1.1 (04-01-2014)
+ * Website. : 	Nemean.no
+ * Author . :	Nemean Web Development Crew
+ * File . . :	style.css (stylesheet)
+
+ -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-*/
+* {
+    font-family: 'Maven Pro', sans-serif;
+}
+body {
+    display: block;
+    background: #fafafa;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    margin-top: 20px;
+}
+.menuitem {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #364d1a;
+    line-height: calc(1.4em + 4px);
+    display: block;
+    padding: 5px;
+}
+.menuitem:hover, .submenuitem:hover {
+    color: #73cd07;
+}
+header {
+    height: 218px;
+    width: 100%;
+}
+header div::before, header div::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+header h3, header h5 {
+    margin-bottom: 10px;
+}
+header h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+}
+header h5 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 0;
+}
+header .pricetag {
+
+}
+.headerpart-1, .headerpart-2, .headerpart-3 {
+    height: inherit;
+    display: inline;
+    float: left;
+    color: #fafafa;
+}
+.headerpart-1 {
+    width: 40%;
+    background-color: #364d1a;
+    -webkit-transition: background-image 2s ease-in-out;
+    -moz-transition: background-image 2s ease-in-out;
+    -ms-transition: background-image 2s ease-in-out;
+    -o-transition: background-image 2s ease-in-out;
+    transition: background-image 2s ease-in-out;
+}
+
+.headerpart-1:hover + .triangle-1::after {
+    background-color: #527526 ;
+}
+
+.headerpart-1:hover{
+    background-image: url("../img/kart_hover.png");
+}
+.headerpart-2 h3, .headerpart-3 h3 {
+    text-align: center;
+    line-height: 218px;
+    margin: 0;
+}
+#left-column, #right-column {/* Headerpart-1 columns */
+    width: calc(50% - 15px);
+    height: 100%;
+    padding-left: 15px;
+}
+#left-column {
+    float: left;
+}
+#right-column {
+    float: right;
+}
+.triangle-1::after {
+    z-index: 10;
+    background-color: #364d1a;
+}
+.triangle-1::before, .triangle-1::after {
+    position: absolute;
+    top: 85px;
+    left: auto;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-2 {
+    width: 30%;
+    background-color: #73cd07;
+}
+.triangle-2::after {
+    z-index: 11;
+    background-color: #73cd07;
+}
+.triangle-2::before, .triangle-2::after {
+    position: absolute;
+    top: 85px;/* */
+    left: auto;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-3 {
+    width: 30%;
+    background-color: #364d1a;
+}
+.global-wrapper {
+    margin: 5px auto;
+    width: 1302px; /* Total width */
+}
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1302px; /* Total width */
+    height: 19px;
+    margin-bottom: 2px;
+}
+#login-link, #logout-link, #toAdminBtn, #forgotPswBtn {
+    float: right;
+    color: #000000;
+    margin-right: 15px;
+}
+#login-link:hover {
+    color: #73ce07;
+}
+.sidebar-left {
+    float: left;
+    width: 182px;
+    min-height: 800px; /* Total height */
+}
+.content-right {
+    float: right;
+    position: relative;
+    width: 1100px; /* Propotional with total width */
+    min-height: 800px; /* Total height */
+}
+.image-slider {
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+    background-color: #fafafa;
+}
+.socialfeed, .burgerfeed, .gallery, .sponsors, .questions, .applytocrew {/* All sections */
+    margin-top: 20px;
+}
+.socialfeed, .gallery, .questions {/* Left subsection */
+    float: left;
+    margin-right: 20px;
+    width: 60%;
+}
+.burgerfeed, .sponsors {/* Right subsection */
+    float: right;
+    width: calc(30% - 20px);
+}
+
+.sponsors img {
+    width: 310px;
+}
+.questions, .applytocrew {
+    float: left;
+    width: calc(35% - 10px) !important;
+    height: 200px;
+    line-height: 150px;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+}
+.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover, .btn:hover {
+    background-color: gray; /* Color transition */
+}
+
+.disabled, .disabled + .triangle-2::after, .disabled:hover, .disabled:hover + .triangle-2::after {
+    background-color: #73ce07;
+}
+.headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social, .register-btn{
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+
+}
+.socialfeed {
+    background-color: #73cd07;
+    height: 700px;
+}
+.burgerfeed {
+    background-color: #73cd07;
+    height: 300px;
+}
+.gallery {
+    height: 300px;
+    background-color: #73cd07;
+    background: url('../img/galleriThumb.png') no-repeat 0 50%;
+    color: gray;
+    line-height: 200px;
+}
+
+.gallery:hover {
+    opacity: 40;
+}
+.sponsors {
+    height: 520px;
+    background-color: #fafafa;
+}
+.questions {
+    background-color: #364d1a;
+}
+.applytocrew {
+    background-color: #364d1a;
+}
+.box-title {
+    width: 100%;
+    height: 40px; /* Be sure to change param 1 (Propotional)*/
+    background-color: #364d1a;
+}
+.box-title h3 {
+    color: #fafafa;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 40px; /* Param 1 */
+    margin-left: 10px;
+}
+.box-content {
+    color: #fafafa;
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 3em;
+}
+.box-content-text {
+    color: #fafafa;
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.5em;
+}
+footer {
+    text-align: center;
+    height: 50px;
+    float:right;
+    width: 100%;
+}
+footer div {
+    font-weight: 400;
+    color: gray;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap, #applicationForm, #orderForm {
+    display: none;
+}
+
+#terms {
+    overflow: auto;
+    list-style: disc;
+    font-size: 0.8em;
+}
+
+#terms ul {
+    padding: 5px;
+}
+
+.formBox form li {
+    list-style-type: none;
+    padding: 5px 0;
+    height: 30px;
+    width: 90%;
+}
+
+.formBox form label {
+    width: 200px;
+    font-size: 13px;
+    font-family: 'Maven Pro', sans-serif;
+    color: #4b4b4b;
+}
+
+.formBox form input {
+    float: right;
+    width: 45%;
+    padding: 5px;
+    border: 1px solid #cccccc;
+}
+
+.formBox textarea {
+    border: 1px solid #cccccc;
+
+}
+
+#forgotPsw form input, #reserveSeat form input, #removeRsv form input {
+    margin-left: 15px;
+    float: right;
+    width: 70%;
+}
+
+.X {
+    position: absolute;
+    right: 10px;
+    top: 228px;
+    font-size: 20px;
+    color: #868686;
+    font-weight: bold;
+    display: none;
+}
+
+.X:hover {
+    text-decoration: none;
+    color: #d1d1d1;
+}
+
+.loader {
+    display: none;
+    position: absolute;
+    left: 5px;
+    bottom: 15px;
+}
+
+.facebook, .twitter {
+    margin-top: 20px;
+    width: calc(35% - 10px) !important;
+    float: left;
+    margin-right: 20px;
+    height: 100px;
+}
+.facebook {
+    background-color: #3b5998;
+}
+.twitter {
+    background-color: #019ad2;
+}
+.youtube {
+    float: left;
+    width: 70%;
+    background-color: #cc181e;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.social .box-content {
+    color: #fafafa;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+.submenuitem {
+    color: gray;
+    font-size: 1.0em;
+    margin-left: 10px;
+    padding: 5px;
+    display: block;
+
+}
+
+
+#gMap {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-left {
+    width: 50%;
+    float: left;
+    height: 400px;
+}
+
+.form-right {
+    width: 50%;
+    float: right;
+    height: 400px;
+}
+
+#quickRegForm {
+    height: 550px;
+}
+
+.btn {
+    float: left !important;
+    margin-left: 0 !important;
+    background-color: #364d1a;
+    margin-top: 15px;
+    color: white;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+}
+
+
+.success{
+    background-color: #61b832;
+    border-color: #55a12c;
+}
+
+.message{
+    margin-top: 30px;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%,
+    transparent 75%, transparent);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
+    width: 1080px;
+    border: 1px solid;
+    color: #fff;
+    padding: 10px;
+    display: block;
+//_position: absolute;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    animation: animate-bg 5s linear infinite;
+    cursor: pointer;
+}
+
+.message h3{
+    margin: 0 0 5px 0;
+}
+
+.message p{
+    margin: 0;
+}
+
+#notify {
+    position: relative;
+}
+
+#notify a.X {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFFFFF;
+}
+
+#orderForm {
+    height: 380px;
+}
+/* Order style */
+#order .form-left, #order .form-right{
+    height: 250px;
+}
+
+#order {
+    margin-bottom: 20px;
+}
+
+.product{
+    display: inline-block;
+    background-color: gray;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+
+}
+#mainProducts .product {
+
+    width: 100px;
+    height:100px;
+    line-height: 100px;
+}
+
+.accessories .product {
+
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.selected {
+    background-color: #364d1a;
+}

@@ -1,0 +1,485 @@
+<head>
+
+    <title>Nemean</title>
+
+    <!-- jQuery Javascript -->
+    <script type="text/javascript" src="site/js/jquery.min.js"></script>
+    <script type="text/javascript" src="site/js/jquery-ui.min.js"></script>
+
+
+    <script type="text/javascript" src="site/js/order.js"></script>
+    <script type="text/javascript" src="site/js/visual.js"></script>
+    <script type="text/javascript" src="site/js/slides.js"></script>
+
+    <meta charset="utf-8">
+    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/slides.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<!--[if lt IE 10]>
+<div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
+    Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
+    <a href="http://www.ie6countdown.com">IE6</a><br />
+    For å få tak i den nyeste versjonen klikk på bildet nedenfor:<br />
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+        <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0003_norwegian.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+    </a>
+</div>
+<![endif]-->
+
+<div class="global-wrapper">
+
+<div class="login">
+    <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
+    <a id="forgotPswBtn" href="#"><div>Glemt passord</div></a>
+</div>
+
+<section class="sidebar-left">
+    <a href="index.php"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
+
+    <nav>
+        <a class="menuitem" href="index.php?&pID=14">Hjem</a>
+        <a class="menuitem" href="?m=articles&act=view&artID=33&pID=15">Informasjon</a>
+        <a class="menuitem" href="?m=reservations&pID=24">Plasskart</a>
+        <a class="menuitem" href="?m=articles&act=view&artID=35&pID=25">Compo/Turneringer</a>
+        <a class="menuitem" href="?m=articles&act=view&artID=34&pID=56">Til foreldre</a>
+        <a class="menuitem" href="?m=articles&act=view&artID=36&pID=57">Om oss</a>
+        <a class="menuitem" href="http://www.twitch.tv/nemeanlanparty&pID=61">Livestream</a>
+
+    </nav>
+</section>
+<div class="content-right">
+<header>
+    <a class="headerpart-1" href=""> <!-- Part 1, Darkgreen. Link to information-page. Hover event not created yet. --> <!-- Divided into two columns -->
+        <div id="left-column">
+            <h3>Hvor?</h3>
+            <h5>Kyrksæterøra,
+                <br/>
+                Sør-Trøndelag</h5>
+            <h3>Når?</h3>
+            <h5>8. - 12. oktober 2014</h5>
+        </div>
+
+        <div id="right-column">
+            <!-- Using spans to make it easier in php, I think... -->
+            <h3>Pris?</h3>
+            <h5>Deltaker: <span class="pricetag">300,-</span></h5>
+            <!--<h5>PGA: <span class="pricetag">500,-</span></h5> -->
+            <h5>Besøke: <span class="pricetag">150,-</span></h5>
+        </div>
+        <br style="clear:both;"/>
+        <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
+    <div class="triangle-1"></div>
+    <a class="headerpart-2" href="" id="registerBtn"><h3> Registrering</h3> </a>
+
+    <div class="triangle-2"></div>
+    <a class="headerpart-3" href="?pID=24&m=reservations"><h3 id="spacemap">Plasskart</h3> </a>
+
+</header>
+
+
+
+
+
+
+
+
+
+<a class="X" href="#">X</a>
+<div class="formBox">
+<div id="qRegister">
+    <form id="quickRegForm" action="?m=users&act=qReg" method="POST">
+        <h4>Registrering</h4>
+        <hr />
+        <div class="form-left">
+            <li>
+                <label for="firstname">Fornavn:</label>
+                <input name="firstname" type="text" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="lastname">Etternavn:</label>
+                <input name="lastname" type="text" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="email">E-post:</label>
+                <input id="regEmail" type="email" name="email" required="required"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="password">Passord:</label>
+                <input type="password" name="password" required="required"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="confpassword">Bekreft passord:</label>
+                <input type="password" name="confpassword" required="required"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="birthdate">Fødselsdato:</label>
+                <input type="text" name="birthdate" required="required" placeholder="DD/MM/YYYY" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="telephone">Telefon:</label>
+                <input type="text" name="telephone" required="required"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="zipcode">Postnr:</label>
+                <input type="text" name="zipcode" required="required" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="streetadress">Gateadresse:</label>
+                <input type="text" name="streetadress" required="required"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="acceptTerms">Jeg har lest, og godtar betingelsene:</label>
+                <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label>&nbsp;</label>
+                <input class="btn" type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+            </li>
+        </div>
+        <div id="terms" class="form-right">
+            <h3> Betingelser </h3>
+            <p>
+                For å opprette bruker i vårt system avhenger det av at du setter deg inn i, og godtar, de nedenforstående betingelser. Ved å hake av "Godta betingelser" samtykker du til følgende:
+            </p>
+            <ul>
+                <li>
+                    &bull; Bilder og video av deg kan brukes av Nemean i promoteringsøyemed
+                </li>
+                <br>
+
+                <p>
+                    &bull; Om dette ikke er ønskelig må det leveres skriftlig beskjed om dette.
+                </p>
+                <br>
+
+                <p>
+                    &bull; Om du er plassert i plasskartet idét det stenges, må du betale uansett om du ikke kommer på arrangementet
+                </p>
+                <br>
+
+                <p>
+                    &bull; Hvis du er under 18 år må registrere en foresatt dersom du ønsker å plassere deg i vårt plasskart. En epost vil da bli sendt til den aktuelle foresatte, der vedkommende må bekrefte at du får delta.
+                </p>
+                <br>
+
+                <p>
+                    &bull; Du er pliktig til å sette deg inn i Nemeans reglement.
+                </p>
+                <br>
+
+                <p>
+                    &bull; Nemean reserverer seg retten til å kunne endre på arrangementsreglene uten varsel - det er opp til den enkelte å holde seg oppdatert på dette (Ordensregler kan ikke ha tilbakevirkende kraft).
+                </p>
+                <br>
+
+                <p>
+                    &bull; Nemean tar vare på personlig informasjon (Adresse, telefonnummer osv.). Informasjonen vil brukes til å kontakte deltagere ved behov.
+                </p>
+                <br>
+
+                <p>
+                    &bull; Ditt fulle navn vises på vår nettside
+                </p>
+                <br>
+
+            </ul>
+
+        </div>
+
+    </form>
+
+</div>
+
+<div id="forgotPsw">
+    <h4>Glemt passord</h4>
+    <hr />
+    <div class="form-left">
+        <form id="forgotPswForm" action="" method="POST">
+
+        <p>
+            Skriv inn din e-postadresse og du vil motta en e-post med et midlertidig passord.
+        </p>
+
+        <li>
+            <label for="email">E-post:</label>
+            <input name="email" type="text" />
+        </li>
+        <li>
+            <label for="submitForgot1">&nbsp;</label>
+            <input class="btn" name="submitForgot1" type="submit" value="Send" />
+        </li>
+        </form>
+    </div>
+
+    <div class="form-right"></div>
+</div>
+
+<div id="loginBox">
+    <h4>Login</h4>
+    <hr />
+    <div class="form-left">
+        <form id="loginBoxForm" action="" method="POST">
+
+            <li>
+                <label for="username">E-post:</label>
+                <input name="username" type="text" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="hidden" value="Logg inn" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="submit" value="Logg inn" />
+            </li>
+        </form>
+    </div>
+    <div class="form-right"></div>
+</div>
+
+<div id="notify" class="message success">
+    <h3></h3>
+    <p></p>
+</div>
+
+<div id="completereg">
+
+    <form id="cRegForm" action="" method="POST">
+        <h4>Fullfør registrering</h4>
+        <p>
+            På grunn av din alder må du registrere en foresatt som ansvarlig for deg.
+            Din foresatte vil motta en e-post med en bekrefelseslink. Du vil ikke kunne plassere deg før din
+            foresatte har mottatt og besøkt bekreftelseslinken.
+        </p>
+        <hr />
+        <li>
+            <label>First name:</label>
+            <input type="text" name="firstname" required="required"/>
+        </li>
+
+        <li>
+            <label>Last name:</label>
+            <input type="text" name="lastname" required="required"/>
+        </li>
+
+        <li>
+            <label>Foresattes e-mail:</label>
+            <input type="email" name="email" required="required"/>
+        </li>
+
+        <li>
+            <label>Foresattes telefonnummer:</label>
+            <input type="number" name="telephone" required="required"/>
+        </li>
+        <input id="cRegSID" name="seat_id" type="hidden" value="" />
+        <li>
+            <label for="submit_cReg">&nbsp;</label>
+            <input name="submit_cReg" type="submit" value="Send" />
+        </li>
+    </form>
+</div>
+
+<div id="applicationForm">
+
+    <form id="application" action="" method="POST">
+        <h4>Søknadskjema for crewopptak</h4>
+        <hr />
+        <div class="form-left">
+            <li>
+                <label for="firstname">Fornavn:</label>
+                <input name="firstname" type="text" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="lastname">Etternavn:</label>
+                <input name="lastname" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="email">Epost:</label>
+                <input name="email" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="byear">Fødselsår:</label>
+                <input name="byear" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="why"><b>Hvorfor?</b></label>
+                <br /><br />
+                <textarea name="why" cols="78" rows="10"  placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
+                <span class="hidden"></span>
+            </li>
+            <li>
+            </li>
+
+        </div>
+        <div class="form-right">
+            <li> </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>
+                <label for="what"><b>Hva?</b></label>
+                <br /><br />
+                <textarea name="what" cols="85" rows="10" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
+                <span class="hidden"></span>
+            </li>
+
+        </div>
+        <label>&nbsp;</label>
+        <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
+    </form>
+
+</div>
+
+
+<div id="gMap">
+    <!--<iframe 
+        width="1100"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;output=embed">
+    </iframe>
+    <br />
+    <small>
+        <a
+        href="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;source=embed"
+        style="color:#0000FF;text-align:left">Vis større kart</a>
+    </small>-->
+
+</div>
+
+<div id="pMap"></div>
+
+<div id="orderForm">
+    <form id="order" action="" method="">
+        <h4>Bestilling</h4>
+        <hr />
+        <div id="mainProducts" class="form-left">
+            <h5>Hovedrett</h5>
+            <a class="product" value="burger">
+                <img title="Burger" src="site/img/ordericons/burger.png"/>
+                <input value="1" name="products[]" hidden type="checkbox"/>
+            </a>
+            <a class="product" value="pizza">
+                <img title="Pizza"  src="site/img/ordericons/pizza.png"/>
+                <input value="18" name="products[]" hidden type="checkbox"/>
+            </a>
+        </div>
+        <div class="form-right accessories">
+            <div  class="burger" style="display:none;">
+                <h5>Tilbehør</h5>
+                <a class="product">
+                    <img title="Ost" src="site/img/ordericons/ost.png"/>
+                    <input name="products[]" hidden value="2" type="checkbox"/>
+                </a>
+                <a class="product">
+                    <img title="Mais"
+                         src="site/img/ordericons/mais.png"/>
+                    <input name="products[]" value="3" hidden type="checkbox"/>
+                </a>
+                <a class="product">
+                    <img title="Tomat" src="site/img/ordericons/tomat.png"/>
+                    <input name="products[]" value="4" hidden type="checkbox"/>
+                </a>
+                <a class="product">
+                    <img title="Salat" src="site/img/ordericons/salat.png"/>
+                    <input name="products[]" value="17" hidden type="checkbox"/>
+                </a>
+                <a class="product">
+                    <img title="Dressing"
+                         src="site/img/ordericons/dressing.png"/>
+                    <input name="products[]" value="23" hidden
+                           type="checkbox"/>
+                </a>
+                <a class="product">
+                    <img title="Ketchup"
+                         src="site/img/ordericons/ketchup.png"/>
+                    <input name="products[]" value="24" hidden
+                           type="checkbox"/>
+                </a>
+            </div>
+
+            <div class="pizza" style="display:none;">
+                <h5>Tilbehør</h5>
+                <a class="product"><img src="site/img/ordericons/ketchup.png"/>
+                    <input name="products[]" value="24" hidden
+                           type="checkbox"/></a>
+            </div>
+        </div>
+        <div id="total"></div>
+        <hr />
+        <input class="btn" type="submit" id="orderSubmit" name="orderSubmit" hidden value="Bestill"/>
+    </form>
+
+</div>
+</div>
+
+
+<section>
+    <section class="sponsors">
+        <a href="http://www.hemnenett.no"><img src="site/img/sponsorer/hemnenett.jpg"/></a>
+        <a href="http://www.sparebankenhemne.no"><img src="site/img/sponsorer/sparebankenHemne.jpg"/></a>
+        <a href="http://www.digitalimpuls.no"><img width="420px" src="site/img/sponsorer/DI.jpg"/></a>
+        <a href="http://www.sagoyvaretaxi.no"><img width="420px" src="site/img/sponsorer/sagoyvaretaxi.jpg"/></a>
+
+    </section>
+
+
+
+
+    <a href="https://www.facebook.com/nemeanlan">
+        <section class="facebook social">
+            <h1 class="box-content" style="line-height:100px;">Facebook</h1>
+        </section></a>
+
+    <a href="https://twitter.com/NemeanLAN">
+        <section class="twitter social">
+            <h1 class="box-content" style="line-height:100px;">Twitter</h1>
+        </section></a>
+
+    <a href="http://www.youtube.com/channel/UCnqj-QgG5GdaZNagYXH88Ng">
+        <section class="youtube social">
+            <h1 class="box-content" style="line-height:100px;">Youtube</h1>
+        </section></a>
+
+    <a href="?m=articles&act=view&artID=37" class="questions"><h1 class="box-content">Kontakt oss</h1></a>
+
+    <a href="" class="applytocrew"><h1 class="box-content">Søk nå</h1></a>
+
+
+</section>
+
+</div>
+<div class="push"></div>
+</div>
+<footer>
+
+    <div id="copyright"> &copy; 2014 Nemean </div>
+</footer>
+</body>
