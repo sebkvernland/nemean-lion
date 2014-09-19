@@ -5,21 +5,28 @@
 </head>
 
 <body>
-    <div class="global-wrapper">
-
-        {{>login}}
-
-        {{>main_menu}}
-
-    <div class="content-right">
-
-        {{>header}}
-
-        {{>start_page}}
-
-    </div>
-
-    </div>
-
-    {{>footer}}
+	{{> main_template}}
 </body>
+
+
+
+
+	<template name="main_template">
+	    <div class="global-wrapper">
+	
+	        {{>login}}
+	
+	        {{>main_menu}}
+	
+	    <div class="content-right">
+	
+	        {{>header}}
+	
+	        {{> yield}}
+	
+	    </div>
+	
+	    </div>
+	
+	    {{>footer}}
+	</template>
