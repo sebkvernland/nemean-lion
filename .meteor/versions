@@ -6,6 +6,7 @@ binary-heap@1.0.0
 blaze-tools@1.0.0
 blaze@2.0.0
 boilerplate-generator@1.0.0
+bootstrap@1.0.1
 callback-hook@1.0.0
 check@1.0.0
 ctl-helper@1.0.3
@@ -16,6 +17,7 @@ ejson@1.0.2
 fastclick@1.0.0
 follower-livedata@1.0.1
 geojson-utils@1.0.0
+handlebars@1.0.0
 html-tools@1.0.0
 htmljs@1.0.1
 http@1.0.5
