@@ -1,92 +1,4 @@
-<head>
-
-    <title>Nemean</title>
-
-    <!-- jQuery Javascript -->
-    <script type="text/javascript" src="site/js/jquery.min.js"></script>
-    <script type="text/javascript" src="site/js/jquery-ui.min.js"></script>
-
-
-    <script type="text/javascript" src="site/js/order.js"></script>
-    <script type="text/javascript" src="site/js/visual.js"></script>
-    <script type="text/javascript" src="site/js/slides.js"></script>
-
-    <meta charset="utf-8">
-    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
-    <link href="site/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="site/css/slides.css" rel="stylesheet" type="text/css" />
-
-</head>
-<body>
-<!--[if lt IE 10]>
-<div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
-    Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
-    <a href="http://www.ie6countdown.com">IE6</a><br />
-    For å få tak i den nyeste versjonen klikk på bildet nedenfor:<br />
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-        <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0003_norwegian.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-    </a>
-</div>
-<![endif]-->
-
-<div class="global-wrapper">
-
-<div class="login">
-    <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
-    <a id="forgotPswBtn" href="#"><div>Glemt passord</div></a>
-</div>
-
-<section class="sidebar-left">
-    <a href="index.php"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
-
-    <nav>
-        <a class="menuitem" href="index.php?&pID=14">Hjem</a>
-        <a class="menuitem" href="?m=articles&act=view&artID=33&pID=15">Informasjon</a>
-        <a class="menuitem" href="?m=reservations&pID=24">Plasskart</a>
-        <a class="menuitem" href="?m=articles&act=view&artID=35&pID=25">Compo/Turneringer</a>
-        <a class="menuitem" href="?m=articles&act=view&artID=34&pID=56">Til foreldre</a>
-        <a class="menuitem" href="?m=articles&act=view&artID=36&pID=57">Om oss</a>
-        <a class="menuitem" href="http://www.twitch.tv/nemeanlanparty&pID=61">Livestream</a>
-
-    </nav>
-</section>
-<div class="content-right">
-<header>
-    <a class="headerpart-1" href=""> <!-- Part 1, Darkgreen. Link to information-page. Hover event not created yet. --> <!-- Divided into two columns -->
-        <div id="left-column">
-            <h3>Hvor?</h3>
-            <h5>Kyrksæterøra,
-                <br/>
-                Sør-Trøndelag</h5>
-            <h3>Når?</h3>
-            <h5>8. - 12. oktober 2014</h5>
-        </div>
-
-        <div id="right-column">
-            <!-- Using spans to make it easier in php, I think... -->
-            <h3>Pris?</h3>
-            <h5>Deltaker: <span class="pricetag">300,-</span></h5>
-            <!--<h5>PGA: <span class="pricetag">500,-</span></h5> -->
-            <h5>Besøke: <span class="pricetag">150,-</span></h5>
-        </div>
-        <br style="clear:both;"/>
-        <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
-    <div class="triangle-1"></div>
-    <a class="headerpart-2" href="" id="registerBtn"><h3> Registrering</h3> </a>
-
-    <div class="triangle-2"></div>
-    <a class="headerpart-3" href="?pID=24&m=reservations"><h3 id="spacemap">Plasskart</h3> </a>
-
-</header>
-
-
-
-
-
-
-
-
-
+<template name="xxxxxx">
 <a class="X" href="#">X</a>
 <div class="formBox">
 <div id="qRegister">
@@ -209,18 +121,18 @@
     <div class="form-left">
         <form id="forgotPswForm" action="" method="POST">
 
-        <p>
-            Skriv inn din e-postadresse og du vil motta en e-post med et midlertidig passord.
-        </p>
+            <p>
+                Skriv inn din e-postadresse og du vil motta en e-post med et midlertidig passord.
+            </p>
 
-        <li>
-            <label for="email">E-post:</label>
-            <input name="email" type="text" />
-        </li>
-        <li>
-            <label for="submitForgot1">&nbsp;</label>
-            <input class="btn" name="submitForgot1" type="submit" value="Send" />
-        </li>
+            <li>
+                <label for="email">E-post:</label>
+                <input name="email" type="text" />
+            </li>
+            <li>
+                <label for="submitForgot1">&nbsp;</label>
+                <input class="btn" name="submitForgot1" type="submit" value="Send" />
+            </li>
         </form>
     </div>
 
@@ -356,7 +268,7 @@
 
 
 <div id="gMap">
-    <!--<iframe 
+    <!--<iframe
         width="1100"
         height="400"
         frameborder="0"
@@ -439,47 +351,4 @@
 
 </div>
 </div>
-
-
-<section>
-    <section class="sponsors">
-        <a href="http://www.hemnenett.no"><img src="site/img/sponsorer/hemnenett.jpg"/></a>
-        <a href="http://www.sparebankenhemne.no"><img src="site/img/sponsorer/sparebankenHemne.jpg"/></a>
-        <a href="http://www.digitalimpuls.no"><img width="420px" src="site/img/sponsorer/DI.jpg"/></a>
-        <a href="http://www.sagoyvaretaxi.no"><img width="420px" src="site/img/sponsorer/sagoyvaretaxi.jpg"/></a>
-
-    </section>
-
-
-
-
-    <a href="https://www.facebook.com/nemeanlan">
-        <section class="facebook social">
-            <h1 class="box-content" style="line-height:100px;">Facebook</h1>
-        </section></a>
-
-    <a href="https://twitter.com/NemeanLAN">
-        <section class="twitter social">
-            <h1 class="box-content" style="line-height:100px;">Twitter</h1>
-        </section></a>
-
-    <a href="http://www.youtube.com/channel/UCnqj-QgG5GdaZNagYXH88Ng">
-        <section class="youtube social">
-            <h1 class="box-content" style="line-height:100px;">Youtube</h1>
-        </section></a>
-
-    <a href="?m=articles&act=view&artID=37" class="questions"><h1 class="box-content">Kontakt oss</h1></a>
-
-    <a href="" class="applytocrew"><h1 class="box-content">Søk nå</h1></a>
-
-
-</section>
-
-</div>
-<div class="push"></div>
-</div>
-<footer>
-
-    <div id="copyright"> &copy; 2014 Nemean </div>
-</footer>
-</body>
+</template>
