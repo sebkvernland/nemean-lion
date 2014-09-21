@@ -2,7 +2,7 @@
 (function (Meteor) {
 	
 	Meteor.startup(function() {
-		console.log("Nemean Kiosk is running at client!");
+		console.log("Nemean-lion is running at client!");
 	});
 	
 	Router.configure({
@@ -19,6 +19,8 @@
 		this.route('R2Step1');
         this.route('map');
         this.route('seat');
+		this.route('about');
+		this.route('map');
 		});
 
     Template.map.seats = [
@@ -32,6 +34,5 @@
         {status: "available"}
     ];
     Template.map.rows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 
 }(Meteor));
