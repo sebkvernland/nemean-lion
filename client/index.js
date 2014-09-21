@@ -21,6 +21,7 @@
         this.route('seat');
 		this.route('about');
 		this.route('map');
+        this.route('article')
 		});
 
     Template.map.seats = [
