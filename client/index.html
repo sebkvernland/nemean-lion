@@ -2,6 +2,7 @@
     <meta charset="utf-8">
     <title>Nemean</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/map.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -10,14 +11,13 @@
 
 
 
+<template name="main_template">
+    <div class="global-wrapper">
 
-	<template name="main_template">
-	    <div class="global-wrapper">
-	
-	        {{>login}}
-	
-	        {{>main_menu}}
-	
+        {{>login}}
+
+        {{>main_menu}}
+
 	    <div class="content-right">
 	
 	        {{>header}}
@@ -25,8 +25,8 @@
 	        {{> yield}}
 	
 	    </div>
-	
-	    </div>
-	
-	    {{>footer}}
-	</template>
+
+    </div>
+
+    {{>footer}}
+</template>

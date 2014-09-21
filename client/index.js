@@ -12,7 +12,8 @@
 
 	Router.map(function() {
 		this.route('start_page', {path: '/'});
-		this.route('about', {path: '/about'});
+		this.route('about');
+		this.route('map');
 		
 		});
 
