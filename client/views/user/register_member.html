@@ -1,0 +1,106 @@
+<template name="R1Step1">
+    <h2>Registrere deltaker</h2>
+    <h4>Steg 1 - Brukerinformasjon</h4>
+
+    <form action="/R1Step2" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="usrFirstName" class="col-sm-2 control-label">Fornavn</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" class="form-control" id="usrFirstName"
+                       placeholder="Skriv inn ditt fornavn" pattern="[A-Za-z]*">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrLastName" class="col-sm-2 control-label">Etternavn</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" class="form-control" id="usrLastName"
+                       placeholder="Skriv inn ditt etternavn" pattern="[A-Za-z]*">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrBirth" class="col-sm-2 control-label">Fødselsår</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-calendar"></i>
+                <input type="number" min="1900" max="2001" step="1"
+                       value="2000"
+                       class="form-control"
+                       id="usrBirth"
+                       placeholder="Skriv inn ditt fødselsår">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrPhone" class="col-sm-2 control-label">Telefon</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-phone"></i>
+                <input type="text" class="form-control" id="usrPhone"
+                       placeholder="Skriv inn ditt telefonnummer"
+                       pattern="[0-9]{8}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrEmail" class="col-sm-2 control-label">E-post</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-envelope"></i>
+                <input type="email" class="form-control" id="usrEmail"
+                       placeholder="Skriv inn din e-post">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrPassword" class="col-sm-2 control-label">Passord</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                <input type="password" class="form-control" id="usrPassword"
+                       placeholder="Velg et passord og skriv det inn her">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usrPasswordRepeat"
+                   class="col-sm-2 control-label">Gjenta passord</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-repeat"></i>
+                <input type="password" class="form-control"
+                       id="usrPasswordRepeat"
+                       placeholder="Skriv inn ditt valgte passord en gang til">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <a href="/registration" role="button" class="btn btn-default">
+                    Tilbake
+                </a>
+                <button type="submit" class="btn btn-default">Neste</button>
+            </div>
+        </div>
+    </form>
+</template>
+
+
+<template name="R1Step2">
+    <h2>Registrere deltaker</h2>
+    <h4>Steg 2 - Betaling</h4>
+
+    <form action="R1Step2" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="usrPayMethod" class="col-sm-2 control-label">Betalingsmåte</label>
+            <div class="col-sm-10 left-inner-addon">
+                <i class="glyphicon glyphicon-list"></i>
+                <select class="form-control" id="usrPayMethod">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <a href="/R1Step1" role="button" class="btn btn-default">
+                    Tilbake
+                </a>
+                <button type="submit" class="btn btn-default" disabled="disabled">Nest
+                    e</button>
+            </div>
+        </div>
+    </form>
+</template>

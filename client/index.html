@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8">
+    <meta name="viewpoert" content="width=device-width, initial scale=1">
     <title>Nemean</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,8 +22,9 @@
 	    <div class="content-right">
 	
 	        {{>header}}
-	
-	        {{> yield}}
+	        <div class="container-fluid">
+	            {{> yield}}
+            </div>
 	
 	    </div>
 	

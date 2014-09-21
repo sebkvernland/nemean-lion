@@ -7,6 +7,10 @@
  * File . . :	style.css (stylesheet)
 
  -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-*/
+@-ms-viewport{
+    width: device-width;
+}
+
 * {
     font-family: 'Maven Pro', sans-serif;
 }
@@ -497,4 +501,33 @@ footer div {
 
 .selected {
     background-color: #364d1a;
+}
+
+
+
+/* Ragnar test */
+
+.left-inner-addon {
+    position: relative;
+}
+
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.left-inner-addon input,
+.left-inner-addon select { padding-left: 30px; }
+
+.mapSeat {
+
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    border-radius: 0;
+}
+
+.available {
+    background-color: #527526;
 }
