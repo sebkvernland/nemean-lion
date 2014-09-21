@@ -1,7 +1,7 @@
 <template name="map">
     <h2>Plasskart</h2>
     {{#each rows}}
-    <div class="row {{if odd">
+    <div class="row">
         {{#each seats}}
         <a href="/seat" class="col-md-1 mapSeat {{status}} btn"></a>
         {{/each}}
