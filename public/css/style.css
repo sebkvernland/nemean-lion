@@ -36,108 +36,19 @@ nav {
 .menuitem:hover, .submenuitem:hover {
     color: #73cd07;
 }
-header {
+
+.background-dark{
+	background-color: #364d1a;
+}
+
+.background-light{
+	background-color: #73cd07;
+}
+.header {
+    color: #fafafa;	
     height: 218px;
-    width: 100%;
-}
-header div::before, header div::after {
-    position: absolute;
-    content: '';
-    pointer-events: none;
-}
-header h3, header h5 {
-    margin-bottom: 10px;
-}
-header h3 {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 24px;
-}
-header h5 {
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: 0;
-}
-header .pricetag {
-
-}
-.headerpart-1, .headerpart-2, .headerpart-3 {
-    height: inherit;
-    display: inline;
-    float: left;
-    color: #fafafa;
-}
-.headerpart-1 {
-    width: 40%;
-    background-color: #364d1a;
-    -webkit-transition: background-image 2s ease-in-out;
-    -moz-transition: background-image 2s ease-in-out;
-    -ms-transition: background-image 2s ease-in-out;
-    -o-transition: background-image 2s ease-in-out;
-    transition: background-image 2s ease-in-out;
 }
 
-.headerpart-1:hover + .triangle-1::after {
-    background-color: #527526 ;
-}
-
-.headerpart-1:hover{
-    background-image: url("../img/kart_hover.png");
-}
-.headerpart-2 h3, .headerpart-3 h3 {
-    text-align: center;
-    line-height: 218px;
-    margin: 0;
-}
-#left-column, #right-column {/* Headerpart-1 columns */
-    width: calc(50% - 15px);
-    height: 100%;
-    padding-left: 15px;
-}
-#left-column {
-    float: left;
-}
-#right-column {
-    float: right;
-}
-.triangle-1::after {
-    z-index: 10;
-    background-color: #364d1a;
-}
-.triangle-1::before, .triangle-1::after {
-    position: absolute;
-    top: 85px;
-    left: auto;
-    width: 60px;
-    height: 60px;
-    -webkit-transform: translateX(-50%) rotate(45deg);
-    transform: translateX(-50%) rotate(45deg);
-}
-.headerpart-2 {
-    width: 30%;
-    background-color: #73cd07;
-}
-.triangle-2::after {
-    z-index: 11;
-    background-color: #73cd07;
-}
-.triangle-2::before, .triangle-2::after {
-    position: absolute;
-    top: 85px;/* */
-    left: auto;
-    width: 60px;
-    height: 60px;
-    -webkit-transform: translateX(-50%) rotate(45deg);
-    transform: translateX(-50%) rotate(45deg);
-}
-.headerpart-3 {
-    width: 30%;
-    background-color: #364d1a;
-}
-.global-wrapper {
-    margin: 5px auto;
-    width: 1302px; /* Total width */
-}
 .login {
     margin-left: auto;
     margin-right: auto;
@@ -153,38 +64,20 @@ header .pricetag {
 #login-link:hover {
     color: #73ce07;
 }
-.sidebar-left {
-    float: left;
-    width: 182px;
-    min-height: 800px; /* Total height */
-}
-.content-right {
-    float: right;
-    position: relative;
-    width: 1100px; /* Propotional with total width */
-    min-height: 800px; /* Total height */
-}
-.image-slider {
-    width: 100%;
-    height: 350px;
-    margin-top: 20px;
-    background-color: #fafafa;
-}
-.socialfeed, .burgerfeed, .gallery, .sponsors, .questions, .applytocrew {/* All sections */
-    margin-top: 20px;
-}
-.socialfeed, .gallery, .questions {/* Left subsection */
-    float: left;
-    margin-right: 20px;
-    width: 60%;
-}
-.burgerfeed, .sponsors {/* Right subsection */
-    float: right;
-    width: calc(30% - 20px);
+
+.tile{
+	height: 100px;
+	width: 100%;
+	margin-top:20px;
 }
 
+.tile:after{
+	margin-right: 10px;
+}
+
+
 .sponsors img {
-    width: 310px;
+    max-width: 310px;
 }
 .questions, .applytocrew {
     float: left;
@@ -197,14 +90,14 @@ header .pricetag {
     -o-transition: background 0.2s linear;
     transition: background 0.2s linear;
 }
-.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover, .btn:hover {
+.questions:hover, .applytocrew:hover, .btn:hover {
     background-color: gray; /* Color transition */
 }
 
 .disabled, .disabled + .triangle-2::after, .disabled:hover, .disabled:hover + .triangle-2::after {
     background-color: #73ce07;
 }
-.headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social, .register-btn{
+ .register-btn{
     -webkit-transition: background 0.2s linear;
     -moz-transition: background 0.2s linear;
     -ms-transition: background 0.2s linear;
@@ -212,62 +105,18 @@ header .pricetag {
     transition: background 0.2s linear;
 
 }
-.socialfeed {
-    background-color: #73cd07;
-    height: 700px;
-}
+
 .burgerfeed {
     background-color: #73cd07;
     height: 300px;
 }
-.gallery {
-    height: 300px;
-    background-color: #73cd07;
-    background: url('../img/galleriThumb.png') no-repeat 0 50%;
-    color: gray;
-    line-height: 200px;
-}
 
-.gallery:hover {
-    opacity: 40;
-}
 .sponsors {
     height: 520px;
     background-color: #fafafa;
 }
-.questions {
-    background-color: #364d1a;
-}
-.applytocrew {
-    background-color: #364d1a;
-}
-.box-title {
-    width: 100%;
-    height: 40px; /* Be sure to change param 1 (Propotional)*/
-    background-color: #364d1a;
-}
-.box-title h3 {
-    color: #fafafa;
-    margin: 0;
-    font-weight: 500;
-    font-size: 1.5em;
-    line-height: 40px; /* Param 1 */
-    margin-left: 10px;
-}
-.box-content {
-    color: #fafafa;
-    margin-top: 20px;
-    font-weight: 500;
-    text-align: center;
-    font-size: 3em;
-}
-.box-content-text {
-    color: #fafafa;
-    margin-top: 10px;
-    font-weight: 500;
-    text-align: center;
-    font-size: 1.5em;
-}
+
+
 footer {
     text-align: center;
     height: 50px;
@@ -328,35 +177,7 @@ footer div {
     width: 70%;
 }
 
-.X {
-    position: absolute;
-    right: 10px;
-    top: 228px;
-    font-size: 20px;
-    color: #868686;
-    font-weight: bold;
-    display: none;
-}
 
-.X:hover {
-    text-decoration: none;
-    color: #d1d1d1;
-}
-
-.loader {
-    display: none;
-    position: absolute;
-    left: 5px;
-    bottom: 15px;
-}
-
-.facebook, .twitter {
-    margin-top: 20px;
-    width: calc(35% - 10px) !important;
-    float: left;
-    margin-right: 20px;
-    height: 100px;
-}
 .facebook {
     background-color: #3b5998;
 }
@@ -364,19 +185,7 @@ footer div {
     background-color: #019ad2;
 }
 .youtube {
-    float: left;
-    width: 70%;
     background-color: #cc181e;
-    height: 100px;
-    margin-top: 20px;
-}
-
-.social .box-content {
-    color: #fafafa;
-    margin: 0;
-    font-weight: 500;
-    text-align: center;
-    font-size: 2em;
 }
 
 

@@ -8,14 +8,18 @@
 <body>
 </body>
 
-<template name="main_template">
+<template name="main_template2">
     <div class="container-fluid">
         {{>header}}
     </div>
 	
-	<div class="container-fluid">
+	<div class="container-fluid row">
+		<div class="col-lg-2">
 	        {{>nav}}
+	    </div>
+	    <div class="col-lg-10 row">
 	        {{> yield}}
+	        </div>
     </div>
 	<div class="container-fluid">
 		{{>footer}}

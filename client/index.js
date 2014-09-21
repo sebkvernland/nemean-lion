@@ -6,7 +6,7 @@
 	});
 	
 	Router.configure({
-		layoutTemplate: 'main_template',
+		layoutTemplate: 'main_template2',
 		notFoundTemplate: 'not_found'
 	});
 
@@ -33,6 +33,16 @@
         {status: "available"},
         {status: "available"}
     ];
+    
+
     Template.map.rows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+    Template.nav.menuItems = [
+        {title: "Informasjon", link: "/info" },
+        {title: "Compo", link: "/compos" },
+        {title: "Plasskart", link: "/map" },
+        {title: "Til foreldre", link: "/parents" },
+        {title: "Om oss", link: "/about" }
+    ];
 
 }(Meteor));

@@ -1,27 +1,35 @@
 <template name="start_page">
-    <section>
+    <div class="row col-lg-9 row" style="padding:0px;">
 
-        {{>sponsors}}
+		<div class="col-lg-6">
+	        <div class="facebook tile">
+	              Facebook
+	        </div>
+		</div>
+		<div class="col-lg-6">
+	        <div class="twitter tile">
+	           Twitter
+	          </div>
+		</div>
+        <div class="col-lg-12">
+        	<div class="youtube tile">
+	           Youtube
+	          </div>
+        </div>
 
-        <a href="https://www.facebook.com/nemeanlan">
-            <section class="facebook social">
-                <h1 class="box-content" style="line-height:100px;">Facebook</h1>
-            </section>
-        </a>
+        <div class="col-lg-6">
+        	<div class="background-dark tile">
+	           Kontakt oss
+	          </div>
+        </div>
 
-        <a href="https://twitter.com/NemeanLAN">
-            <section class="twitter social">
-                <h1 class="box-content" style="line-height:100px;">Twitter</h1>
-            </section></a>
-
-        <a href="http://www.youtube.com/channel/UCnqj-QgG5GdaZNagYXH88Ng">
-            <section class="youtube social">
-                <h1 class="box-content" style="line-height:100px;">Youtube</h1>
-            </section></a>
-
-        <a href="?m=articles&act=view&artID=37" class="questions"><h1 class="box-content">Kontakt oss</h1></a>
-
-        <a href="" class="applytocrew"><h1 class="box-content">Søk nå</h1></a>
-
-    </section>
+        <div class=" col-lg-6">
+        	<div class="background-dark tile">
+	           Søk nå
+	          </div></div>
+	</div>
+    
+    <div class="sponsors col-lg-3">
+    	{{>sponsors}}
+    </div>
 </template>

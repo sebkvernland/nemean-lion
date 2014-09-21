@@ -1,14 +1,7 @@
-<template name="main_menu">
-    <section class="sidebar-left">
-        <a href="/"><img src="img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
-
+<template name="nav">
         <nav>
-            <a class="menuitem" href="info">Informasjon</a>
-            <a class="menuitem" href="/map">Plasskart</a>
-            <a class="menuitem" href="/compos">Compo</a>
-            <a class="menuitem" href="/parents">Til foreldre</a>
-            <a class="menuitem" href="/about">Om oss</a>
-
+        	{{#each menuItems}}
+            <a class="menuitem" href="{{link}}">{{title}}</a>
+            {{/each}}
         </nav>
-    </section>
 </template>
