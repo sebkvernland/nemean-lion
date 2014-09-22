@@ -47,6 +47,7 @@ nav {
 .header {
     color: #fafafa;	
     height: 218px;
+    position: relative;
 }
 
 .login {
@@ -66,15 +67,64 @@ nav {
 }
 
 .tile{
+	
 	height: 100px;
 	width: 100%;
 	margin-top:20px;
+	text-align: center;
+	color: white;
+	line-height: 100px;
+	font-size: 30px;
+	padding: 0px;
+}
+
+.row div {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+.tile:hover, .header:hover {
+	background-color: gray;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+    cursor: pointer;
+}
+.header:hover .diamond{
+	border-left: 40px solid gray;
+    -webkit-transition: border-color 0.2s linear;
+    -moz-transition: border-color 0.2s linear;
+    -ms-transition: border-color 0.2s linear;
+    -o-transition: border-color 0.2s linear;
+    transition: border-color 0.2s linear;
 }
 
 .tile:after{
 	margin-right: 10px;
 }
 
+.diamond{
+	width: 0; 
+	height: 0; 
+	border-top: 40px solid transparent;
+	border-bottom: 40px solid transparent;
+	position: absolute;
+	top: 75px;
+	right: -60px;
+	z-index: 999;
+}
+
+.diamond-dark{
+	
+	border-left: 40px solid #364D1A;
+}
+
+.diamond-light{
+	
+	border-left: 40px solid #73cd07;
+}
 
 .sponsors img {
     max-width: 310px;
@@ -112,14 +162,15 @@ nav {
 }
 
 .sponsors {
-    height: 520px;
     background-color: #fafafa;
 }
 
 
 footer {
     text-align: center;
-    height: 50px;
+    vertical-align: bottom;
+    line-height: 100px;
+    height: 100px;
     float:right;
     width: 100%;
 }

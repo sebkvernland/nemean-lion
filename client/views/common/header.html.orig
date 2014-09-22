@@ -1,5 +1,19 @@
 <template name="header">
+<<<<<<< Updated upstream
+    <header class="row">
+        <div class="col-lg-2 "><img src="img/logo.jpg"/></div>
 
+        <div class="col-lg-4 header background-dark">
+            <h3>Hei</h3>
+       </div>
+        <a class="background-light header col-lg-3 " href="/registration">
+            <h3>Hei</h3>
+        </a>
+        <a class="header col-lg-3 background-dark" href="/map">
+            <h3>Hei</h3>
+        </a>
+    </header>
+=======
 <header class="row">
 	<div style="text-align:center;" class="col-lg-2 "><img src="img/logo.jpg"/></div>
     
@@ -23,4 +37,8 @@
 	</div>
 
 </header>
+
+        
+
+>>>>>>> Stashed changes
 </template>

@@ -1,4 +1,5 @@
 <template name="nav">
+<<<<<<< Updated upstream
     <nav class="mainMenu">
         {{#each menuItems}}
         <a class="menuitem {{#if menu}}isParent{{/if}}"
@@ -12,5 +13,11 @@
         {{/if}}
         {{/each}}
     </nav>
-
+=======
+        <nav class="navbar-collapse">
+        	{{#each menuItems}}
+            <a class="menuitem" href="{{link}}">{{title}}</a>
+            {{/each}}
+        </nav>
+>>>>>>> Stashed changes
 </template>
