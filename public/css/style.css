@@ -48,6 +48,7 @@ nav {
     color: #fafafa;	
     height: 218px;
     position: relative;
+    line-height: 220px;
 }
 
 .login {
@@ -71,11 +72,14 @@ nav {
 	height: 100px;
 	width: 100%;
 	margin-top:20px;
+	padding: 0px;
+	line-height: 100px;
+}
+
+.tile-text{
 	text-align: center;
 	color: white;
-	line-height: 100px;
-	font-size: 30px;
-	padding: 0px;
+	font-size: 25px;
 }
 
 .row div {
