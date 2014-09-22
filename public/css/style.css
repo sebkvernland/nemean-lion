@@ -274,16 +274,7 @@ footer div {
     height: 550px;
 }
 
-.btn {
-    float: left !important;
-    margin-left: 0 !important;
-    background-color: #364d1a;
-    margin-top: 15px;
-    color: white;
-    height: 40px;
-    width: 100px;
-    cursor: pointer;
-}
+
 
 
 .success{
