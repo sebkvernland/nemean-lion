@@ -239,6 +239,9 @@ footer div {
     background-color: #cc181e;
 }
 
+.submenu {
+    display: none;
+}
 
 .submenuitem {
     color: gray;
@@ -246,7 +249,6 @@ footer div {
     margin-left: 10px;
     padding: 5px;
     display: block;
-
 }
 
 
