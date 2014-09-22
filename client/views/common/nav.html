@@ -1,7 +1,15 @@
 <template name="nav">
-        <nav>
-        	{{#each menuItems}}
-            <a class="menuitem" href="{{link}}">{{title}}</a>
-            {{/each}}
-        </nav>
+    <nav class="mainMenu">
+        {{#each menuItems}}
+        <a class="menuitem {{#if menu}}isParent{{/if}}"
+           href="{{link}}">{{title}}</a>
+        {{#if menu}}
+            <span class="submenu">
+                {{#each menu}}
+                <a class="submenuitem" href="{{link}}">{{title}}</a>
+                {{/each}}
+            </span>
+        {{/if}}
+        {{/each}}
+    </nav>
 </template>

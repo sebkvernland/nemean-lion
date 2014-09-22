@@ -1,6 +1,13 @@
-
 (function (Meteor) {
-	
+
+
+    $(document).ready(function() {
+        $("body").on('click', '.isParent', function(e){
+            $(this).next('.submenu').slideToggle();
+        });
+    });
+
+
 	Meteor.startup(function() {
 		console.log("Nemean-lion is running at client!");
 	});
@@ -21,7 +28,9 @@
         this.route('seat');
 		this.route('about');
 		this.route('map');
-        this.route('article')
+        this.route('article');
+        this.route('info');
+        this.route('compos');
 		});
 
     Template.map.seats = [
@@ -39,8 +48,18 @@
     Template.map.rows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     
     Template.nav.menuItems = [
-        {title: "Informasjon", link: "/info" },
-        {title: "Compo", link: "/compos" },
+        {title: "Informasjon", link: "/info", menu: [
+            {title: "Utstyrsliste", link: "/compos/cs"},
+            {title: "Til foreldre", link: "/compos/sc2"},
+            {title: "Reglement", link: "/compos/sc2"},
+            {title: "Kontakt", link: "/compos/sc2"},
+            {title: "Om oss", link: "/compos/sc2"}
+        ]},
+        {title: "Compo", link: "/compos", menu: [
+            {title: "CS", link: "/compos/cs"},
+            {title: "Starcraft", link: "/compos/sc2"},
+            {title: "LoL", link: "/compos/sc2"}
+        ]},
         {title: "Plasskart", link: "/map" },
         {title: "Til foreldre", link: "/parents" },
         {title: "Om oss", link: "/about" }
