@@ -1,7 +1,7 @@
 /**
  * Created by ragnar on 28/09/14.
  */
-(function (Meteor) {
+(function (Meteor, Accounts) {
 
     Meteor.methods({
         'newUser': function (user) {
@@ -16,6 +16,11 @@
                 }
             }
             addUser(options);
+        },
+
+        'loginUser': function (user) {
+            console.log(user);
+            login(user.username, user.password);
         }
     });
 
@@ -62,4 +67,17 @@
         Roles.addUsersToRoles(id, ['Awsom', 'Deltaker', 'Redneck']);
     }
 
-}(Meteor));
+    function changePassword(user) {
+        Accounts.changePassword()
+    }
+
+    function login(username, password) {
+        var t = Meteor.loginWithPassword(username, password, function (error) {
+            if (error) {
+                console.log(error);
+            }
+        });
+        console.log(t);
+    }
+
+}(Meteor, Accounts));

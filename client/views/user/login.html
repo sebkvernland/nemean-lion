@@ -1,6 +1,33 @@
 <template name="login">
-    <div class="login">
-        <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
-        <a id="forgotPswBtn" href="#"><div>Glemt passord</div></a>
-    </div>
+    <form action="/" class="form-horizontal" role="form" id="loginForm"
+          method="post">
+        <div class="form-group">
+            <div
+                    class="col-sm-offset-2 col-sm-8 col-lg-offset-2 col-lg-8 left-inner-addon">
+                <i class="glyphicon glyphicon-envelope"></i>
+                <input type="email" class="form-control" id="usrUsername"
+                       name="usrUsername"
+                       placeholder="Skriv inn email">
+            </div>
+        </div>
+        <div class="form-group">
+            <div
+                    class="col-sm-offset-2 col-sm-8 col-lg-offset-2 col-lg-8  left-inner-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                <input type="password" class="form-control" id="usrPassword"
+                       name="usrPassword"
+                       placeholder="Skriv inn ditt passord">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8 col-lg-offset-2 col-lg-8 ">
+                <a class="btn btn-default cancel">Avbryt</a>
+                <button type="submit" class="btn btn-default pull-right">Logg
+                    inn</button>
+
+                <a href="/" class="btn btn-default btn-xs">Glemt
+                    passord</a>
+            </div>
+        </div>
+    </form>
 </template>

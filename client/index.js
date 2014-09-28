@@ -22,7 +22,6 @@
 		this.route('about', {path: '/about'});
 		this.route('registration');
 		this.route('R1Step1');
-		this.route('R1Step2');
 		this.route('R2Step1');
         this.route('map');
         this.route('seat');
@@ -55,6 +54,17 @@
 
         'click .facebook': function(event, template) {
             Router.go("https://www.facebook.com/nemeanlan");
+        },
+        'click .logo': function(event, template) {
+            Meteor.loginWithPassword('ragnar.kalland@gmail.com', '1234', function(error){
+                if (error) {
+                    console.log(error);
+                }
+            });
+        },
+
+        'click .logout': function(event, template) {
+            Meteor.logout();
         }
     });
 

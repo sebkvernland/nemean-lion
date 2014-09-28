@@ -57,6 +57,15 @@ nav {
     line-height: 220px;
 }
 
+.headerLogin {
+    color: #fafafa;
+    height: 218px;
+    position: relative;
+    font-size: 10px;
+    padding-top: 40px;
+    padding-left: 45px;
+}
+
 .tile{
 
     height: 100px;

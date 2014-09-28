@@ -1,7 +1,8 @@
 <template name="header">
 
 <header class="row">
-	<div style="text-align:center;" class="col-lg-2"><img src="img/logo.jpg"/></div>
+
+	<div class="col-lg-2 logo"><img src="img/logo.jpg"/></div>
     
     <div class="col-lg-4 header background-dark tile-text info">
     	Info
@@ -10,16 +11,30 @@
     
     
     
-    <div class="background-light header col-lg-3 tile-text register">
-    	Registrering
+    <div  class="background-light header col-lg-3 tile-text {{stateClass}}">
+        {{#if currentUser}}
+            {{currentUser.profile.name}}
+        {{else}}
+            Registrering
+        {{/if}}
     	 <div class="diamond-light diamond"></div>
 	</div>
 
    
-    <div class="header col-lg-3 background-dark tile-text map">
-    	Plasskart
+    <div class="{{viewLoginClass}} col-lg-3 background-dark {{mapLink}}">
+        {{#if currentUser}}
+            Plasskart
+        {{else}}
+            {{#if viewLogin}}
+                {{>login}}
+            {{else}}
+                Logg inn
+            {{/if}}
+        {{/if}}
     	
 	</div>
 
 </header>
 </template>
+
+
