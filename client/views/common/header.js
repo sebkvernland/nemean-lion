@@ -18,11 +18,18 @@
         },
 
         mapLink: function(event, template) {
-            return (loggedIn()) ? 'map' : 'login';
+            if (loggedIn()) {
+                return 'map';
+            }
+            else if (Session.get('viewLoginState')) {
+                return '';
+            }
+            else {
+                return 'login';
+            }
         }
 
     });
-
 
     Template.header.events({
         'click .login': function(event, template) {
@@ -40,12 +47,13 @@
         },
 
         'submit form': function(event, template) {
-            console.log('testing');
             var user = Meteor.nemean.getFormData("#loginForm");
             Meteor.loginWithPassword(user.usrUsername, user.usrPassword, function(error){
                 if (error) {
                     console.log(error);
+                    return;
                 }
+                Session.set('viewLoginState', false);
             });
             event.preventDefault();
         }
