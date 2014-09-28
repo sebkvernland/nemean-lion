@@ -3,7 +3,6 @@
     <meta name="viewpoert" content="width=device-width, initial scale=1">
     <title>Nemean</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script src="js/functions.js"></script>
 </head>
 
 <body>
@@ -14,9 +13,13 @@
         {{>header}}
     </div>
 	
-	<div class="container-fluid">
+	<div class="container-fluid row">
+		<div class="col-lg-2">
 	        {{>nav}}
+	    </div>
+	    <div class="col-lg-10 row">
 	        {{> yield}}
+        </div>
     </div>
 	<div class="container-fluid">
 		{{>footer}}

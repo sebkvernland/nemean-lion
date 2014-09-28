@@ -13,7 +13,7 @@
 	});
 	
 	Router.configure({
-		layoutTemplate: 'main_template2',
+		layoutTemplate: 'main_template',
 		notFoundTemplate: 'not_found'
 	});
 
