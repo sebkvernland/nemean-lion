@@ -13,7 +13,7 @@
 	});
 	
 	Router.configure({
-		layoutTemplate: 'main_template',
+		layoutTemplate: 'index',
 		notFoundTemplate: 'not_found'
 	});
 
@@ -33,6 +33,32 @@
         this.route('compos');
 		});
 
+
+
+    Template.index.events({
+        /** Hide displayMessage from view **/
+        'click .register': function(event, template) {
+            Router.go("/registration");
+        },
+
+        'click .map': function(event, template) {
+            Router.go("/map");
+        },
+
+        'click .info': function(event, template) {
+            Router.go("/info");
+        },
+
+        'click .logo': function(event, template) {
+            Router.go("/");
+        },
+
+        'click .facebook': function(event, template) {
+            Router.go("https://www.facebook.com/nemeanlan");
+        }
+    });
+
+// Dummy data
     Template.map.seats = [
         {status: "available"},
         {status: "unavailable"},
