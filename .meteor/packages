@@ -4,12 +4,12 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 handlebars
 underscore
 iron:router
 mizzao:bootstrap-3
 jquery
 less
+accounts-base
+accounts-password
 
