@@ -14,7 +14,15 @@
             Meteor.call('newUser', user, function(error) {
                 if (error) {
                     console.log(error);
+                    return;
                 }
+                Meteor.loginWithPassword(user.usrEmail, user.usrPassword, function(error) {
+                    if (error) {
+                        console.log(error);
+                        return;
+                    }
+                    Router.go("/");
+                });
             });
             event.preventDefault();
         }

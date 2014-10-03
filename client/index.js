@@ -30,6 +30,7 @@
         this.route('article');
         this.route('info');
         this.route('compos');
+        this.route('userPage');
 		});
 
 
@@ -48,23 +49,8 @@
             Router.go("/info");
         },
 
-        'click .logo': function(event, template) {
-            Router.go("/");
-        },
-
         'click .facebook': function(event, template) {
             Router.go("https://www.facebook.com/nemeanlan");
-        },
-        'click .logo': function(event, template) {
-            Meteor.loginWithPassword('ragnar.kalland@gmail.com', '1234', function(error){
-                if (error) {
-                    console.log(error);
-                }
-            });
-        },
-
-        'click .logout': function(event, template) {
-            Meteor.logout();
         }
     });
 
