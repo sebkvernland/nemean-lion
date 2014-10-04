@@ -31,6 +31,7 @@
         this.route('info');
         this.route('compos');
         this.route('userPage');
+        this.route('userAdministration');
 		});
 
 

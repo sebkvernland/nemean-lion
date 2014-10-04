@@ -3,10 +3,15 @@
  */
 (function (Meteor) {
 
+   Meteor.subscribe("userData", Meteor.userId());
+
     Template.userPage.helpers({
-        'isAdmin': function(event, template) {
-            console.log('hey');
-            return (Roles.userIsInRole(Meteor.userId(), ['Admin']));
+
+    });
+
+    Template.userAdministration.helpers({
+        'users': function(event, template) {
+            return Meteor.users.find({}).fetch();
         }
     });
 
@@ -42,7 +47,7 @@
         }
     });
 
-    Template.adminPage.events({
+    Template.userAdministration.events({
         'click .deleteUsers': function(){
             Meteor.call('deleteAll', Meteor.userId(), function(error) {
                 if (error) {
@@ -50,6 +55,12 @@
                     return;
                 }
             })
+        }
+    });
+
+    Template.adminPage.events({
+        'click .userAdministration': function(event, template) {
+            Router.go("/userAdministration");
         }
     });
 }(Meteor));

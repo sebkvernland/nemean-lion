@@ -39,7 +39,7 @@
         }
     });
 
-    Meteor.users.allow({
+    /*Meteor.users.allow({
         insert: function(userID, doc) {
             // Check if admin
            // return true
@@ -51,9 +51,7 @@
 
         remove: function() {
 
-        },
-
-        fetch:[]
+        }
     });
 
     Meteor.users.deny({
@@ -67,10 +65,8 @@
 
         remove: function() {
 
-        },
-
-        fetch: []
-    });
+        }
+    });*/
 
 
     function validateUser(user) {}
@@ -95,4 +91,10 @@
         console.log(t);
     }
 
+    Meteor.publish("userData", function(userId) {
+        if (Roles.userIsInRole(userId, ['Admin'])) {
+            console.log('Fetching users');
+            return Meteor.users.find({});
+        }
+    })
 }(Meteor, Accounts));
