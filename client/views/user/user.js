@@ -31,7 +31,7 @@
         }
     });
 
-    Template.userPage.events({
+    Template.memberPage.events({
         'click .deleteUser': function(){
             Meteor.call('deleteUser', Meteor.userId(), function(error) {
                 if (error) {
@@ -42,4 +42,14 @@
         }
     });
 
+    Template.adminPage.events({
+        'click .deleteUsers': function(){
+            Meteor.call('deleteAll', Meteor.userId(), function(error) {
+                if (error) {
+                    console.log(error);
+                    return;
+                }
+            })
+        }
+    });
 }(Meteor));

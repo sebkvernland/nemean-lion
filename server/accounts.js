@@ -26,6 +26,16 @@
         'deleteUser': function(user) {
             console.log(user.username + "deleted!");
             Meteor.users.remove({_id: user});
+        },
+
+        'deleteAll': function(userId) {
+           if( Roles.userIsInRole(userId, ['Admin'])) {
+                Meteor.users.remove( {roles:{ $not: /Admin/}});
+                console.log("All non admins deleted!");
+           }
+           else {
+               console.log("Permission denied!");
+           }
         }
     });
 
@@ -69,7 +79,7 @@
         //validateUser(options)
         var id = Accounts.createUser(user);
         console.log('User created ' + id + ' ' + user.profile.name);
-        Roles.addUsersToRoles(id, ['Awsom', 'Deltaker', 'Redneck']);
+        Roles.addUsersToRoles(id, ['User']);
     }
 
     function changePassword(user) {
