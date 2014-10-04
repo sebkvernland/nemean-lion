@@ -21,6 +21,11 @@
         'loginUser': function (user) {
             console.log(user);
             login(user.username, user.password);
+        },
+
+        'deleteUser': function(user) {
+            console.log(user.username + "deleted!");
+            Meteor.users.remove({_id: user});
         }
     });
 
