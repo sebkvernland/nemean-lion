@@ -3,8 +3,11 @@
  */
 (function (Meteor) {
 
-    Template.R1Step1.helpers({
-
+    Template.userPage.helpers({
+        'isAdmin': function(event, template) {
+            console.log('hey');
+            return (Roles.userIsInRole(Meteor.userId(), ['Admin']));
+        }
     });
 
     Template.R1Step1.events({
