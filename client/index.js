@@ -32,6 +32,7 @@
         this.route('compos');
         this.route('userPage');
         this.route('userAdministration');
+        this.route('not_found')
 		});
 
 
@@ -52,6 +53,16 @@
 
         'click .facebook': function(event, template) {
             Router.go("https://www.facebook.com/nemeanlan");
+        },
+
+        'click .clickable': function(event, templates) {
+            var link = event.currentTarget.attributes.id.value;
+            if (_.contains(_.pluck(Router.routes, 'name'), link)) {
+                Router.go(link);
+            }
+            else {
+                Router.go("not_found");
+            }
         }
     });
 
