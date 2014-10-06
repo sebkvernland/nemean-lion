@@ -36,6 +36,15 @@
            else {
                console.log("Permission denied!");
            }
+        },
+        'authenticateUser': function(pwd) {
+            if (this.userId) {
+                var user = Meteor.user();
+                var password = {digest: pwd, algorithm: 'sha-256'};
+                var result = Accounts._checkPassword(user, password);
+                return (result.error == null);
+            }
+            return false;
         }
     });
 

@@ -36,14 +36,34 @@
         }
     });
 
-    Template.memberPage.events({
-        'click .deleteUser': function(){
-            Meteor.call('deleteUser', Meteor.userId(), function(error) {
+    Template.deleteMember.helpers({
+       'usrPasswordInput': function() {
+           return (Session.get('usrPasswordClass'));
+       }
+    });
+
+    Template.deleteMember.events({
+        'submit form': function(event, template){
+            var pwd = Package.sha.SHA256($('#usrPassword').val());
+            Meteor.call('authenticateUser', pwd, function(error, result) {
                 if (error) {
                     console.log(error);
-                    return;
                 }
-            })
+
+                if (result) {
+                    Meteor.call('deleteUser', Meteor.userId(), function(error) {
+                        if (error) {
+                            console.log(error);
+                        }
+                        Router.go("/");
+                        Session.set('usrPasswordClass', '');
+                    });
+                }
+                else {
+                    Session.set('usrPasswordClass', 'has-error');
+                }
+            });
+            event.preventDefault();
         }
     });
 
@@ -63,4 +83,11 @@
             Router.go("/userAdministration");
         }
     });
+
+    function verifyUser(pwd) {
+        var retVal;
+
+        console.log('retval2: ' + retVal);
+    }
+
 }(Meteor));

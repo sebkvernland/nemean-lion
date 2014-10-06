@@ -32,6 +32,7 @@
         this.route('compos');
         this.route('userPage');
         this.route('userAdministration');
+        this.route('deleteMember');
         this.route('not_found')
 		});
 
