@@ -5,7 +5,7 @@
 
     Template.header.helpers({
         stateClass: function(event, template) {
-            return (loggedIn()) ? 'myPage' : 'register';
+            return (loggedIn()) ? 'userPage' : 'registration';
         },
 
         viewLogin: function(event, template) {
@@ -57,11 +57,6 @@
             });
             event.preventDefault();
         },
-
-        'click .myPage': function(event, template) {
-            Router.go("/user/userPage");
-        },
-
         'click .logo': function(event, template) {
             Router.go("/");
         }

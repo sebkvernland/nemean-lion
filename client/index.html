@@ -12,13 +12,14 @@
     <div class="container-fluid">
         {{>header}}
     </div>
-	
-	<div class="container-fluid row">
-		<div class="col-lg-2">
-	        {{>nav}}
-	    </div>
-	    <div class="col-lg-10 row">
-	        {{> yield}}
+
+    <div class="container-fluid row">
+        <div class="col-lg-2">
+            {{>nav}}
+        </div>
+        <div class="col-lg-10 row">
+            {{>systemMessage}}
+            {{> yield}}
 
         </div>
     </div>

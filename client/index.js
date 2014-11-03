@@ -68,6 +68,11 @@
         }
     });
 
+    Template.systemMessage.systemMessage =function () { return Session.get("systemMessage")};
+
+    Template.systemMessage.visible = function () { 
+        return Session.get("systemMessage") != null;
+        };
 
 // Dummy data
     Template.map.seats = [

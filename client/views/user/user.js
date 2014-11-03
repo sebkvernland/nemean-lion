@@ -19,7 +19,7 @@
         'submit form': function(event, template) {
             var user = Meteor.nemean.getFormData('#R1Step1');
 
-            Meteor.call('newUser', user, function(error) {
+            Meteor.call('newUser', user, function(error, result) {
                 if (error) {
                     console.log(error);
                     return;
@@ -80,7 +80,14 @@
                 if (result) {
                         var newPwd = $('#newPassword').val();
                         Accounts.changePassword($('#oldPassword').val(), newPwd, function(error){
-                            console.log(error);
+                            
+                            if(error) {
+                                console.log(error);
+                                Meteor.nemean.redneckShout(ALERT.E, "En feil oppstod!")
+                                return;
+                            }
+                            Router.go("userPage");
+                            Meteor.nemean.redneckShout(ALERT.A,"Ditt passord er nå endret!");
                         });
                     }
 
