@@ -24,13 +24,15 @@
                     console.log(error);
                     return;
                 }
-                Meteor.loginWithPassword(user.usrEmail, user.usrPassword, function(error) {
-                    if (error) {
-                        console.log(error);
-                        return;
-                    }
-                    Router.go("/");
-                });
+                if (result){
+                    Meteor.loginWithPassword(user.usrEmail, user.usrPassword, function(error) {
+                        if (error) {
+                            console.log(error);
+                            return;
+                        }
+                        Router.go("/");
+                    });
+                }
             });
             event.preventDefault();
         }
@@ -56,7 +58,6 @@
                             console.log(error);
                         }
                         Router.go("/");
-                        Session.set('usrPasswordClass', '');
                     });
                 }
                 else {
@@ -66,6 +67,34 @@
             event.preventDefault();
         }
     });
+
+        Template.changePassword.events({
+        'submit form': function(event, template){
+
+            var pwd = Package.sha.SHA256($('#oldPassword').val());
+            Meteor.call('authenticateUser', pwd, function(error, result) {
+                if (error) {
+                    console.log(error);
+                }
+
+                if (result) {
+                        var newPwd = $('#newPassword').val();
+                        Accounts.changePassword($('#oldPassword').val(), newPwd, function(error){
+                            console.log(error);
+                        });
+                    }
+
+                else {
+                    Session.set('usrPasswordClass', 'has-error');
+                }
+            });
+            event.preventDefault();
+        }
+    });
+
+    Template.deleteMember.destroyed = function(){
+         Session.set('usrPasswordClass', '');
+    };
 
     Template.userAdministration.events({
         'click .deleteUsers': function(){

@@ -59,7 +59,7 @@
         },
 
         'click .myPage': function(event, template) {
-            Router.go("/userPage");
+            Router.go("/user/userPage");
         },
 
         'click .logo': function(event, template) {
