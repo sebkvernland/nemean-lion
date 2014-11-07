@@ -120,10 +120,4 @@
         }
     });
 
-    function verifyUser(pwd) {
-        var retVal;
-
-        console.log('retval2: ' + retVal);
-    }
-
 }(Meteor));
