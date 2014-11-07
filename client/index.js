@@ -65,6 +65,9 @@
                 console.log(Error);
                 Router.go("not_found");
               }
+        },
+        'click .logout': function(event, template) {
+            Meteor.logout();
         }
     });
 
