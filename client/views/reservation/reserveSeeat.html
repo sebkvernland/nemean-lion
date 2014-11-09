@@ -1,0 +1,24 @@
+<template name="reserveSeat">
+    <h2>Reservere seter</h2>
+
+    <form action="/R1Step2" class="form-horizontal" role="form" id="R1Step1"
+          method="post">
+        <div class="form-group">
+            <label for="usrPassword" class="col-sm-2 control-label">Passord</label>
+            <div class="col-sm-4 left-inner-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                <input type="password" class="form-control" id="usrPassword"
+                       name="usrPassword"
+                       placeholder="Skriv inn ditt passord">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <a href="/registration" role="button" class="btn btn-default">
+                    Tilbake
+                </a>
+                <button type="submit" class="btn btn-default">Neste</button>
+            </div>
+        </div>
+    </form>
+</template>

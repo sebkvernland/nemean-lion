@@ -24,7 +24,7 @@
         this.route('R1Step1', {path:'/user/registration/R1Step1'});
         this.route('R1Step2', {path:'/user/registration/R1Step2'});
         this.route('map');
-        this.route('seat', {path:'/map/seat' });
+        this.route('reserveSeat', {path:'/map/reserveSeat' });
         this.route('article');
         this.route('info');
         this.route('compos');
@@ -78,20 +78,6 @@
         };
 
 // Dummy data
-    Template.map.seats = [
-        {status: "available"},
-        {status: "unavailable"},
-        {status: "available"},
-        {status: "available"},
-        {status: "available"},
-        {status: "available"},
-        {status: "available"},
-        {status: "available"}
-    ];
-
-
-    Template.map.rows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
     Template.nav.menuItems = [
         {title: "Informasjon", link: "/info", menu: [
             {title: "Utstyrsliste", link: "/compos/cs"},
