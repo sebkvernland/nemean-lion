@@ -1,0 +1,185 @@
+
+.infoBarPanel
+{
+    width: 30%;
+    float: right;
+    margin-top: 40px;
+}
+
+.mapDiv
+{
+    display: block;
+    width: 70%;
+    text-align: center;
+}
+
+.evenDivider
+{
+    display: block;
+    margin: 10px auto;
+}
+
+.evenDivider a, .infoBar a
+{
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+#centerDiv
+{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+span.info
+{
+    position: absolute;
+    display: none;
+    width: 250px;
+    font-size: 12px;
+    color: white;
+    padding: 5px 10px 10px;
+    background-color: #364D1A;
+    text-align: left;
+    z-index: 99999;
+
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+}
+
+.evenDivider a:hover span.info
+{
+    display: block;
+    z-index: 99;
+    cursor: default;
+}
+
+.minisal
+{
+
+    position: absolute;
+    top: 50px;
+    left: -180px;
+    display: block;
+    margin: 10px auto;
+    width: 160px;
+}
+
+
+.mEven {
+    width: 30px;
+    float: left;
+}
+
+.mEven2{
+    width: 60px;
+    float: left;
+}
+
+.minisal a:hover span.info
+{
+    display: block;
+    z-index: 99;
+    cursor: default;
+}
+.minisal a
+{
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    padding: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.mapAvailableInfo, .mapReservedInfo, .mapCurrentUserInfo, .mapLockedInfo
+{
+    margin: 0 auto;
+}
+
+.mapAvailable, .mapAvailableInfo
+{
+    background: grey;
+}
+
+.mapReserved, .mapReservedInfo
+{
+    background: #73cd07;
+}
+
+
+.mapCurrentUser, .mapCurrentUserInfo
+{
+    background: #0785ce;
+}
+
+.mapLocked, .mapLockedInfo
+{
+    background: #ce0707;
+    
+}
+
+
+span.info h2
+{
+    font-size: 18px;
+}
+
+p button
+{
+    padding: 5px;
+    font-size: 8px;
+}
+
+.infoBar
+{
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 10px;
+    display: block;
+}
+
+.infoBar span {
+    padding-left: 10px;
+}
+
+.infoBar span, .infoBar a {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+span.info form li {
+    list-style-type: none;
+}
+
+span.info form input {
+    border: 0;
+    float: right;
+    width: 95%;
+    padding: 5px;
+    font-size: 1.3em;
+    border: 1px solid #696969;
+}
+
+span.info form input[type="submit"] {
+    display: none;
+    width: 50%;
+    background-color: #8c8c8c;
+}
+
+span.info form input:focus {
+    border: 1px solid #696969;
+}
+
+span.info form label {
+    font-weight: bold;
+}
+
+.loading {
+    background: transparent url(../../site/img/loading.gif) no-repeat right;
+}

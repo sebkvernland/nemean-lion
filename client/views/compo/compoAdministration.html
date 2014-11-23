@@ -1,0 +1,35 @@
+<template name="compoAdministration">
+    {{#if currentUser}}
+        {{#if isAdmin}}
+            <h3>Administrere brukere</h3>
+            <div class="row" style="padding: 0;">
+                <div class="col-lg-2">
+                    <div class="tile tile-text background-dark">
+                        Ny Compo
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="deleteCompo tile tile-text youtube">
+                        Slett Compo
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Navn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each users}}
+                    <tr>
+                        <td>{{profile.name}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <p>Denne siden krever administrator rettigheter.</p>
+        {{/if}}
+    {{/if}}
+</template>

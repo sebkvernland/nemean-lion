@@ -214,3 +214,11 @@ footer div {
 .available {
     background-color: #527526;
 }
+
+.unavailable {
+    background-color: #ce0707;
+}
+
+.currentUser {
+    background: #0785ce;
+}

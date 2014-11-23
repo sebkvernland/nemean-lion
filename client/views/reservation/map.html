@@ -1,21 +1,21 @@
 <template name="map">
     <h2>Plasskart</h2>
-    {{#each rows}}
     <div class="row">
-        {{#each seats}}
-        <a href="/seat" class="col-md-1 mapSeat {{status}} btn"></a>
+        {{#with map}}
+        {{#each sections}}
+            <div class="col-lg-6">
+                {{#each rows}}
+                    <div class="row">
+                        {{#each seats}}
+                            <a id="reserveSeat" class="col-md-1 mapSeat {{status}} btn"></a>
+                        {{/each}}
+                    </div>
+                    {{#if rowEven}}
+                        <br><br>
+                    {{/if}}
+                {{/each}}
+            </div>
         {{/each}}
-    </div>
-    {{/each}}
-</template>
-
-<template name="seat">
-    <div class="form-group">
-        <label for="usrPassword" class="col-sm-2 control-label">Passord</label>
-        <div class="col-sm-4 left-inner-addon">
-            <i class="glyphicon glyphicon-lock"></i>
-            <input type="password" class="form-control" id="usrPassword"
-                   placeholder="Velg et passord og skriv det inn her">
-        </div>
+        {{/with}}
     </div>
 </template>

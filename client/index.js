@@ -25,6 +25,7 @@
         this.route('R1Step2', {path:'/user/registration/R1Step2'});
         this.route('map');
         this.route('reserveSeat', {path:'/map/reserveSeat' });
+        this.route('deleteReservation', {path:'/map/deleteReservation' });
         this.route('article');
         this.route('info');
         this.route('compos');
@@ -58,7 +59,7 @@
 
         'click .clickable': function(event, templates) {
             var link = event.currentTarget.attributes.id.value;
-            try { 
+            try {
                 Router.go(link);
               }
             catch(Error) {
@@ -71,29 +72,37 @@
         }
     });
 
-    Template.systemMessage.systemMessage =function () { return Session.get("systemMessage")};
+    Template.systemMessage.helpers({
+        'systemMessage': function () {
+            return Session.get("systemMessage");
+        },
 
-    Template.systemMessage.visible = function () { 
-        return Session.get("systemMessage") != null;
-        };
+        'visible': function () {
+            return Session.get("systemMessage") !== null;
+        }
+    });
 
 // Dummy data
-    Template.nav.menuItems = [
-        {title: "Informasjon", link: "/info", menu: [
-            {title: "Utstyrsliste", link: "/compos/cs"},
-            {title: "Til foreldre", link: "/compos/sc2"},
-            {title: "Reglement", link: "/compos/sc2"},
-            {title: "Kontakt", link: "/compos/sc2"},
-            {title: "Om oss", link: "/compos/sc2"}
-        ]},
-        {title: "Compo", link: "/compos", menu: [
-            {title: "CS", link: "/compos/cs"},
-            {title: "Starcraft", link: "/compos/sc2"},
-            {title: "LoL", link: "/compos/sc2"}
-        ]},
-        {title: "Plasskart", link: "/map" },
-        {title: "Til foreldre", link: "/parents" },
-        {title: "Om oss", link: "/about" }
-    ];
+    Template.nav.helpers({
+    'menuItems': function() {
+        return [
+            {title: "Informasjon", link: "/info", menu: [
+                {title: "Utstyrsliste", link: "/compos/cs"},
+                {title: "Til foreldre", link: "/compos/sc2"},
+                {title: "Reglement", link: "/compos/sc2"},
+                {title: "Kontakt", link: "/compos/sc2"},
+                {title: "Om oss", link: "/compos/sc2"}
+            ]},
+            {title: "Compo", link: "/compos", menu: [
+                {title: "CS", link: "/compos/cs"},
+                {title: "Starcraft", link: "/compos/sc2"},
+                {title: "LoL", link: "/compos/sc2"}
+            ]},
+            {title: "Plasskart", link: "/map" },
+            {title: "Til foreldre", link: "/parents" },
+            {title: "Om oss", link: "/about" }
+        ];
+    }
+    });
 
 }(Meteor));

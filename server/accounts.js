@@ -14,8 +14,8 @@
                     birthYear: user.usrBirth,
                     phone    : user.usrPhone
                 }
-            }
-            addUser(options);
+            };
+            return addUser(options);
         },
 
         'loginUser': function (user) {
@@ -39,10 +39,10 @@
         },
         'authenticateUser': function(pwd) {
             if (this.userId) {
-                var user = Meteor.user();
-                var password = {digest: pwd, algorithm: 'sha-256'};
-                var result = Accounts._checkPassword(user, password);
-                return (result.error == null);
+                var user = Meteor.user(),
+                password = {digest: pwd, algorithm: 'sha-256'},
+                result = Accounts._checkPassword(user, password);
+                return result;
             }
             return false;
         }
@@ -83,12 +83,16 @@
     function addUser(user) {
         //validateUser(options)
         var id = Accounts.createUser(user);
-        console.log('User created ' + id + ' ' + user.profile.name);
-        Roles.addUsersToRoles(id, ['User']);
+        if(id) {
+            console.log('User created ' + id + ' ' + user.profile.name);
+            Roles.addUsersToRoles(id, ['User']);
+            return true;
+        }
+        return false;
     }
 
     function changePassword(user) {
-        Accounts.changePassword()
+        Accounts.changePassword();
     }
 
     function login(username, password) {
@@ -105,5 +109,5 @@
             console.log('Fetching users');
             return Meteor.users.find({});
         }
-    })
+    });
 }(Meteor, Accounts));

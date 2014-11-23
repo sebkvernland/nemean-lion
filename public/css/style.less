@@ -1,0 +1,383 @@
+
+// @-ms-viewport{
+    // width: device-width;
+// }
+
+// * {
+    // font-family: 'Maven Pro', sans-serif;
+// }
+body {
+    display: block;
+    background: #fafafa;
+    margin: 20px 40px;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    margin-top: 20px;
+}
+.menuitem {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #364d1a;
+    line-height: calc(1.4em + 4px);
+    display: block;
+    padding: 5px;
+}
+.menuitem:hover, .submenuitem:hover {
+    color: #73cd07;
+}
+
+.background-dark{
+  background-color: #364d1a;
+}
+
+.background-light{
+  background-color: #73cd07;
+}
+.header {
+    color: #fafafa; 
+    height: 218px;
+    position: relative;
+    line-height: 220px;
+}
+
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1302px; /* Total width */
+    height: 19px;
+    margin-bottom: 2px;
+}
+#login-link, #logout-link, #toAdminBtn, #forgotPswBtn {
+    float: right;
+    color: #000000;
+    margin-right: 15px;
+}
+#login-link:hover {
+    color: #73ce07;
+}
+
+.tile{
+  
+  height: 100px;
+  width: 100%;
+  margin-top:20px;
+  padding: 0px;
+  line-height: 100px;
+}
+
+.tile-text{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+.row div {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.tile:hover, .header:hover {
+  background-color: gray;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+    cursor: pointer;
+}
+.header:hover .diamond{
+  border-left: 40px solid gray;
+    -webkit-transition: border-color 0.2s linear;
+    -moz-transition: border-color 0.2s linear;
+    -ms-transition: border-color 0.2s linear;
+    -o-transition: border-color 0.2s linear;
+    transition: border-color 0.2s linear;
+}
+
+.tile:after{
+  margin-right: 10px;
+}
+
+.diamond{
+  width: 0; 
+  height: 0; 
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 75px;
+  right: -60px;
+  z-index: 999;
+}
+
+.diamond-dark{
+  
+  border-left: 40px solid #364D1A;
+}
+
+.diamond-light{
+  
+  border-left: 40px solid #73cd07;
+}
+
+.sponsors img {
+    max-width: 310px;
+}
+.questions, .applytocrew {
+    float: left;
+    width: calc(35% - 10px) !important;
+    height: 200px;
+    line-height: 150px;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+}
+.questions:hover, .applytocrew:hover, .btn:hover {
+    background-color: gray; /* Color transition */
+}
+
+.disabled, .disabled + .triangle-2::after, .disabled:hover, .disabled:hover + .triangle-2::after {
+    background-color: #73ce07;
+}
+ .register-btn{
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+
+}
+
+.burgerfeed {
+    background-color: #73cd07;
+    height: 300px;
+}
+
+.sponsors {
+    background-color: #fafafa;
+    margin-top: 20px;
+}
+
+
+footer {
+    text-align: center;
+    vertical-align: bottom;
+    line-height: 100px;
+    height: 100px;
+    float:right;
+    width: 100%;
+}
+footer div {
+    font-weight: 400;
+    color: gray;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap, #applicationForm, #orderForm {
+    display: none;
+}
+
+#terms {
+    overflow: auto;
+    list-style: disc;
+    font-size: 0.8em;
+}
+
+#terms ul {
+    padding: 5px;
+}
+
+.formBox form li {
+    list-style-type: none;
+    padding: 5px 0;
+    height: 30px;
+    width: 90%;
+}
+
+.formBox form label {
+    width: 200px;
+    font-size: 13px;
+    font-family: 'Maven Pro', sans-serif;
+    color: #4b4b4b;
+}
+
+.formBox form input {
+    float: right;
+    width: 45%;
+    padding: 5px;
+    border: 1px solid #cccccc;
+}
+
+.formBox textarea {
+    border: 1px solid #cccccc;
+
+}
+
+#forgotPsw form input, #reserveSeat form input, #removeRsv form input {
+    margin-left: 15px;
+    float: right;
+    width: 70%;
+}
+
+
+.facebook {
+    background-color: #3b5998;
+}
+.twitter {
+    background-color: #019ad2;
+}
+.youtube {
+    background-color: #cc181e;
+}
+
+.submenu {
+    display: none;
+}
+
+.submenuitem {
+    color: gray;
+    font-size: 1.0em;
+    margin-left: 10px;
+    padding: 5px;
+    display: block;
+}
+
+
+#gMap {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-left {
+    width: 50%;
+    float: left;
+    height: 400px;
+}
+
+.form-right {
+    width: 50%;
+    float: right;
+    height: 400px;
+}
+
+#quickRegForm {
+    height: 550px;
+}
+
+
+
+
+.success{
+    background-color: #61b832;
+    border-color: #55a12c;
+}
+
+.message{
+    margin-top: 30px;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%,
+    transparent 75%, transparent);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
+    width: 1080px;
+    border: 1px solid;
+    color: #fff;
+    padding: 10px;
+    display: block;
+//_position: absolute;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    animation: animate-bg 5s linear infinite;
+    cursor: pointer;
+}
+
+.message h3{
+    margin: 0 0 5px 0;
+}
+
+.message p{
+    margin: 0;
+}
+
+#notify {
+    position: relative;
+}
+
+#notify a.X {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFFFFF;
+}
+
+#orderForm {
+    height: 380px;
+}
+/* Order style */
+#order .form-left, #order .form-right{
+    height: 250px;
+}
+
+#order {
+    margin-bottom: 20px;
+}
+
+.product{
+    display: inline-block;
+    background-color: gray;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+
+}
+#mainProducts .product {
+
+    width: 100px;
+    height:100px;
+    line-height: 100px;
+}
+
+.accessories .product {
+
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.selected {
+    background-color: #364d1a;
+}
+
+
+
+/* Ragnar test */
+
+.left-inner-addon {
+    position: relative;
+}
+
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.left-inner-addon input,
+.left-inner-addon select { padding-left: 30px; }
+
+.mapSeat {
+
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    border-radius: 0;
+}
+
+.available {
+    background-color: #527526;
+}

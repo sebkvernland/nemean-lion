@@ -24,15 +24,18 @@
                     console.log(error);
                     return;
                 }
+
                 if (result){
+                    console.log("Logging in!");
                     Meteor.loginWithPassword(user.usrEmail, user.usrPassword, function(error) {
                         if (error) {
                             console.log(error);
                             return;
                         }
                         Router.go("/");
+                        Meteor.nemean.redneckShout(ALERT.S, "Gratulerer! Du er nå den lykkelige eier av din egen Nemean-konto :-)");
                     });
-                }
+                }else {console.log("No result, and most cetanly no error!");}
             });
             event.preventDefault();
         }
@@ -73,22 +76,31 @@
 
             var pwd = Package.sha.SHA256($('#oldPassword').val());
             Meteor.call('authenticateUser', pwd, function(error, result) {
-                if (error) {
-                    console.log(error);
+                if (result.error) {
+                    console.log(result.error);
+                    Meteor.nemean.redneckShout(ALERT.E, Meteor.nemean.getErrorMessage(result.error.error));
+                    return;
                 }
 
                 if (result) {
                         var newPwd = $('#newPassword').val();
-                        Accounts.changePassword($('#oldPassword').val(), newPwd, function(error){
-                            
-                            if(error) {
-                                console.log(error);
-                                Meteor.nemean.redneckShout(ALERT.E, "En feil oppstod!")
-                                return;
-                            }
-                            Router.go("userPage");
-                            Meteor.nemean.redneckShout(ALERT.A,"Ditt passord er nå endret!");
-                        });
+                        var newPwdRepeat = $('#passwordRepeat').val();
+                        if(newPwd === newPwdRepeat) {
+                            Accounts.changePassword($('#oldPassword').val(), newPwd, function(error){
+
+                                if(error) {
+                                    console.log(error);
+                                    Meteor.nemean.redneckShout(ALERT.E, Meteor.nemean.getErrorMessage(error.error));
+                                    return;
+                                }
+                                Router.go("userPage");
+                                Meteor.nemean.redneckShout(ALERT.I,"Ditt passord er nå endret!");
+                            });
+                        }
+                        else {
+                            Meteor.nemean.redneckShout(ALERT.E, Meteor.nemean.getErrorMessage(900));
+                            return;
+                        }
                     }
 
                 else {
@@ -110,7 +122,7 @@
                     console.log(error);
                     return;
                 }
-            })
+            });
         }
     });
 
