@@ -1,0 +1,35 @@
+<template name="newArticle">
+    {{#if previewMode}}
+    <article>
+        <header>
+            <h2><input name="" type="text" value="Tittel på artikkel" /></h2>
+            <p><b>Pulbisert:</b></p>
+        </header>
+        <footer>
+            <hr>
+            <img height="100px" src="img/logo.jpg" class="img-circle"
+                 style="float:left;
+            " />
+            <div>
+                <h4>Forfatter: Kasper</h4>
+                <h5>Ugle som kan snu på hodet 280º</h5>
+            </div>
+        </footer>
+    </article>
+    {{else}}
+    <article>
+        <header>
+            <h2><input name="" type="text" value="Tittel på artikkel" /></h2>
+        </header>
+
+        <section>
+            <p>Tekst i avsnitt</p>
+        </section>
+        <section>
+            <h4>Tittel på avsnitt</h4>
+            <p>Tekst i avsnitt</p>
+        </section>
+
+    </article>
+    {{/if}}
+</template>

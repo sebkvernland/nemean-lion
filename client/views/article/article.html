@@ -1,19 +1,40 @@
 <template name="article">
     <article>
         <header>
-            <h2>Informasjon: Klart for lan 2015</h2>
-            <p>Publisert: Sist endret:</p>
+            <h2>{{article.title}}</h2>
+            <p><b>Pulbisert:</b> {{article.published}}</p>
         </header>
-        <p>Dummy text</p>
-        <p>Dymmu tedt</p>
+
+        {{#each article.paragraphs}}
+            {{#if editMode}}
+                {{#if title}}
+                <input class="col-lg-12" name="" type="text"
+                       value="{{title}}" />
+                {{/if}}
+                <textarea class="col-lg-12" rows="8">
+                    {{text}}
+                </textarea>
+                <button class="btn btn-success">Lagre</button>
+                <button class="btn btn-danger">Avbryt</button>
+            {{else}}
+            <section>
+                {{#if title}}
+                    <h4>{{title}}</h4>
+                    <p id="{{id}}">{{text}}</p>
+                {{else}}
+                    <p id="{{id}}">{{text}}</p>
+                {{/if}}
+            </section>
+            {{/if}}
+        {{/each}}
         <footer>
             <hr>
             <img height="100px" src="img/logo.jpg" class="img-circle"
                  style="float:left;
             " />
             <div>
-            <h4>Forfatter: Aran</h4>
-            <h5>Webkunstner</h5>
+                <h4>Forfatter: Kasper</h4>
+                <h5>Ugle som kan snu på hodet 280º</h5>
             </div>
         </footer>
     </article>

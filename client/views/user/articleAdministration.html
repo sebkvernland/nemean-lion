@@ -1,29 +1,30 @@
-<template name="userAdministration">
+<template name="articleAdministration">
     {{#if currentUser}}
         {{#if isAdmin}}
-            <h3>Administrere brukere</h3>
+            <h3>Administrere artikler</h3>
             <div class="row" style="padding: 0;">
                 <div class="col-lg-2">
-                    <div class="tile tile-text background-dark">
-                        Ny bruker
+                    <div id="newArticle" class="tile tile-text background-dark
+                    clickable">
+                        Ny artikkel
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-3">
                     <div class="deleteUsers tile tile-text youtube">
-                        Slett alle brukere
+                        Slett alle artikler
                     </div>
                 </div>
             </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Navn</th>
+                        <th>Tittel</th>
                     </tr>
                 </thead>
                 <tbody>
-                {{#each users}}
+                {{#each articles}}
                     <tr>
-                        <td>{{profile.name}}</td>
+                        <td>{{title}}</td>
                     </tr>
                 {{/each}}
                 </tbody>

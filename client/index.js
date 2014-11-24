@@ -31,6 +31,8 @@
         this.route('compos');
         this.route('userPage',  {path: '/user/userPage'});
         this.route('userAdministration', {path:'/admin/userAdministration'});
+        this.route('articleAdministration', {path:'/admin/articleAdministration'});
+        this.route('newArticle', {path:'/admin/article/new'});
         this.route('deleteMember', {path:'/user/deleteMember'});
         this.route('changePassword', {path: '/user/changePassword'});
         this.route('not_found');
