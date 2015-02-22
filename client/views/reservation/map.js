@@ -41,6 +41,7 @@ Reservations = new Meteor.Collection('reservations');
         'click #reserveSeat': function(event, template) {
             var seated = isSeated(Meteor.userId());
             if(!seated && this.status === "available") {
+                reserveSeat(0, this.id);
                 Session.set("clickedSeat", this.id);
                 Router.go("reserveSeat");
             }
@@ -67,12 +68,18 @@ Reservations = new Meteor.Collection('reservations');
                 if (result) {
                     Session.set("systemMessage", undefined);
                     var seat = Session.get("clickedSeat");
-                    reserveSeat(Meteor.userId(), seat);
+                    updateSeat(Meteor.userId(), seat);
                     Router.go("map");
                 }
                 
             });
             event.preventDefault();
+        },
+
+        'click .cancelReservation': function() {
+            var clickedSeat = Session.get("clickedSeat"),
+                    seat = findSeat(clickedSeat);
+                    Reservations.remove({_id: seat._id});
         }
     });
 
@@ -114,15 +121,20 @@ Reservations = new Meteor.Collection('reservations');
                 _.each(mapConfig.seats, function(s){
                     var seatId = r.name + sect + "-" +s,
                     seat = Reservations.findOne({reservationId: seatId}),
-                    status = "";
+                    status = "",
+                    blocked =  (seat && seat.userId === 0) ? true : false,
+                    currentUser = (seat && seat.userId === Meteor.userId()) ? true : false;
 
-                    if(seat) {
-                        status = "unavailable";
+                    if(seat && blocked) {
+                        status = "blocked";
                     }
-                    if(seat && seat.userId === Meteor.userId()){
+                    if (seat && !blocked && currentUser)
+                    {
                         status = "currentUser";
                     }
-
+                    if (seat && !blocked && !currentUser) {
+                       status = "unavailable";
+                    }
                     if(!seat) {
                         status = "available";
                     }
@@ -149,6 +161,11 @@ Reservations = new Meteor.Collection('reservations');
             };
 
         return Reservations.insert(seat);
+    }
+
+    function updateSeat(uId, sId) {
+        var seat = findSeat(sId);
+        return Reservations.update({_id: seat._id},{ $set: { userId: uId}});
     }
 
     function findSeat(seatId) {

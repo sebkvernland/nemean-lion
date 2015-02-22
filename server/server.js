@@ -17,6 +17,10 @@ Reservations.allow({
 
     remove: function() {
         return true;
+    },
+
+    update: function(seat) {
+        return true;
     }
 });
 

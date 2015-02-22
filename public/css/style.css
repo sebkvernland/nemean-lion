@@ -222,3 +222,7 @@ footer div {
 .currentUser {
     background: #0785ce;
 }
+
+.blocked {
+    background: yellow;
+}
